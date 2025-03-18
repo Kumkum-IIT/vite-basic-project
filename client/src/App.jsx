@@ -18,15 +18,6 @@ function App() {
   })
   const [message, setMessage] = useState('');
 
-  const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:8080/api");
-    setArray(response.data.fruits);
-  };
-
-  useEffect(() => {
-    fetchAPI();
-  }, []);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -62,6 +53,9 @@ function App() {
         ...formData,
         selectedAnswer: ''
       });
+      setTimeout(() => {
+        window.location.reload(); // {{ edit_1 }}
+      }, 1500);
     } catch (error) {
       setMessage('Error submitting answer: ' + error.message);
       console.error('Error submitting form:', error);

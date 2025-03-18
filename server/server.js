@@ -25,10 +25,6 @@ const questionSchema = new mongoose.Schema({
 // Create a model from the schema
 const Question = mongoose.model('Question', questionSchema);
 
-app.get("/api", (req, res) => {
-  res.json({ fruits: ["apple", "banana", "cherry"] });
-});
-
 // New endpoint to save quiz questions
 app.post("/api/questions", async (req, res) => {
   try {
