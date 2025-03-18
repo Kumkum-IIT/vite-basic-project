@@ -5,8 +5,6 @@ import './App.css'
 import axios from "axios";
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [array, setArray] = useState([])
   const [formData, setFormData] = useState({
     question: 'What is your name?',
     optionA: 'Kumkum',
@@ -17,14 +15,6 @@ function App() {
     selectedAnswer: ''
   })
   const [message, setMessage] = useState('');
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
 
   const handleOptionSelect = (option) => {
     setFormData({
